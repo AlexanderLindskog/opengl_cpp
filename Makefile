@@ -12,7 +12,7 @@ IDIR := include
 OBJDIR := objdir
 
 # Compiler (g++)
-CCC = g++
+CCC = g++ -fdiagnostics-color
 
 # Compiling flags
 CCFLAGS += -MMD -std=c++17 -Wall -Wextra -pedantic -Weffc++ -Wold-style-cast
@@ -20,7 +20,7 @@ CCFLAGS += -MMD -std=c++17 -Wall -Wextra -pedantic -Weffc++ -Wold-style-cast
 LDFLAGS += -lglfw -lGL -lX11 -lpthread -lXrandr -lXi -ldl
 
 # Object modules
-OBJECTS = glad.o stb_image.o
+OBJECTS = glad.o stb_image.o utils.o game.o window.o
 
 MAIN = $(addprefix $(OBJDIR)/, main.o $(OBJECTS))
 
